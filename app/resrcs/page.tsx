@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import RsHeader from "./_components/RsHeader";
 import Resources from "./_components/Resources";
 import { cn } from "@/lib/utils";
 
-const page = () => {
+const Page = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleClick = () => {
@@ -18,4 +18,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

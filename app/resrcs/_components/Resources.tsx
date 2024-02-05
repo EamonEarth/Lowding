@@ -19,7 +19,7 @@ const Resources = () => {
     <div className="w-auto h-auto  ">
       <Accordion type="single" collapsible className="">
         {RESOURCES.map((resource) => (
-          <AccordionItem value={resource}>
+          <AccordionItem key={resource} value={resource}>
             <AccordionTrigger>{resource}</AccordionTrigger>
             <AccordionContent>
               <div className="flex relative justify-around ">
