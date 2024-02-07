@@ -20,7 +20,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         nav: `${cn(
-          "underline-offset-4 hover:underline text-lg pseudo-bold ",
+          "underline-offset-4 hover:underline text-lg pseudo-bold text-foreground",
           bungeeHairline.className
         )}`,
       },

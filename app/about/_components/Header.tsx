@@ -4,18 +4,24 @@ import { consola } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { consolaBold } from "@/lib/fonts";
 import Link from "next/link";
+import { bungeeHairline } from "@/lib/fonts";
 
-const Header = () => {
+interface HeaderProps {
+  setScrollToAbout: (value: boolean) => void;
+}
+
+const Header = ({ setScrollToAbout }: HeaderProps) => {
   const { resolvedTheme } = useTheme();
   const isDarkTheme = resolvedTheme === "dark";
+  console.log(isDarkTheme);
 
   const headerSrc = isDarkTheme
     ? "/centered-logo-white.png"
     : "/centered-logo-dark.png";
-  console.log("hey");
+
   return (
     <section className="pt-[80px]">
       <div
@@ -23,20 +29,22 @@ const Header = () => {
         style={{ backgroundImage: "url('/Home_Header_Banner.jpg')" }}
       ></div>
 
-      <div className="absolute w-full h-[545px] z-1 bg-background opacity-70 dark:hidden"></div>
+      <div
+        id="OVERLAY"
+        className="absolute w-full h-[545px] z-10 bg-foreground opacity-50 dark:hidden"
+      ></div>
 
       <div className="w-full h-[545px] flex flex-col justify-center items-center gap-y-4 z-10 relative top-8 ">
         <Image
-          src={`${headerSrc}`}
+          src={headerSrc}
           alt="logo"
           width={300}
           height={100}
-          // className=
-          // className="blink transition-all"
+          //
         />
         <p
           className={cn(
-            "text-2xl text-center min-w-[20%] max-w-[66%] md:pb-4 tracking-wider text-foreground dark:text-softyellow ",
+            "text-2xl  text-center min-w-[20%] md:max-w-[66%] md:pb-4 tracking-wider text-black dark:text-foreground ",
             consolaBold.className
           )}
         >
@@ -45,12 +53,20 @@ const Header = () => {
           Learn about Low Impact Websites and explore online resources to create
           eco-friendly sites.
         </p>
-        <div className="flex flex-col md:flex-row gap-x-4 pb-20">
-          <Button className="uppercase bg-white  border-2 font-bold border-black  rounded-none text-black hover:bg-white">
+        <div
+          className={cn(
+            "flex flex-col md:flex-row gap-x-4 gap-y-1 pb-20 text-booster-1",
+            bungeeHairline.className
+          )}
+        >
+          <Button
+            onClick={() => setScrollToAbout(true)}
+            className="uppercase bg-foreground  border-2 font-bold border-black  rounded-none text-black "
+          >
             Learn More
           </Button>
           <Link href="/resrcs">
-            <Button className="uppercase bg-black border-2 dark:text-white border-white font-bold rounded-none hover:bg-black">
+            <Button className="uppercase bg-black border-2 text-white border-foreground font-bold rounded-none hover:bg-black">
               Go to Resources
             </Button>
           </Link>

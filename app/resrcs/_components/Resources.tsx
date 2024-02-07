@@ -4,6 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { consola } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 const RESOURCES = [
   "Fonts",
@@ -14,20 +16,29 @@ const RESOURCES = [
   "Content Management System (CMS)",
 ];
 
-const Resources = () => {
+interface ResourcesProps {
+  darkTheme: boolean | null;
+}
+
+const Resources = ({ darkTheme }: ResourcesProps) => {
   return (
-    <div className="w-auto h-auto  ">
+    <div
+      className={cn(
+        "w-auto h-auto  border-2 border-foreground text-booster-1 dark:text-booster-2-light",
+        consola.className,
+        darkTheme ? "text-booster-1-light" : "text-booster-1"
+      )}
+    >
       <Accordion type="single" collapsible className="">
         {RESOURCES.map((resource) => (
           <AccordionItem key={resource} value={resource}>
-            <AccordionTrigger>{resource}</AccordionTrigger>
+            <AccordionTrigger className="text-black dark:text-foreground">
+              {resource}
+            </AccordionTrigger>
             <AccordionContent>
-              <div className="flex relative justify-around ">
+              <div className="flex flex-col md:flex-row gap-y-12 relative justify-around px-12">
                 <div className="flex flex-col">
-                  <h1 className="text-center font-bold text-lg">
-                    {resource} tbc
-                  </h1>
-                  <ul className="list-disc">
+                  <ul className="list-disc dark:text-foreground ">
                     <li>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Lorem ipsum dolor sit amet, consectetur.
@@ -48,7 +59,7 @@ const Resources = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="flex flex-col md:my-12 max-w-4/5">
+                <div className="flex flex-col md:my-12 max-w-[75%] dark:text-foreground">
                   <span className="gap-x-2">
                     •
                     <a href="" className="hover:underline transition">

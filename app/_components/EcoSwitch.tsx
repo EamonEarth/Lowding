@@ -3,20 +3,15 @@
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { consolaBold } from "@/lib/fonts";
 
 const EcoSwitch = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const [activated, setActivated] = useState(false);
 
-  const isDarkTheme = resolvedTheme === "dark";
-  const switchFrameSrc = isDarkTheme
-    ? "/switch_frame_light.png"
-    : "/switch_frame_dark.png";
-  const switchBitSrc = !isDarkTheme ? "/off_switch_b.png" : "/on_switch_w.png";
-
   const handleThemeClick = () => {
+    console.log("hi");
     setActivated(!activated);
     if (resolvedTheme === "light") {
       setTheme("dark");
@@ -24,15 +19,24 @@ const EcoSwitch = () => {
       setTheme("light");
     }
   };
+
+  useEffect(() => console.log(resolvedTheme), [resolvedTheme]);
+  const isDarkTheme = resolvedTheme === "dark";
+  const switchFrameSrc = isDarkTheme
+    ? "/switch_frame_light.png"
+    : "/switch_frame_dark.png";
+  const switchBitSrc = !isDarkTheme ? "/off_switch_b.png" : "/on_switch_w.png";
+
   return (
-    <div className="flex items-center tracking-tight ">
+    <div className="flex items-center tracking-tight  md:max-w-auto">
       <p
         className={cn(
-          "uppercase text-md font-extrabold pr-2 underline text-foreground dark:text-foreground tracking-wide",
-          consolaBold.className
+          "uppercase  text-md md:text-md  font-extrabold pr-2 underline text-black dark:text-foreground tracking-",
+          consolaBold.className,
+          isDarkTheme ? "eco-booster-1-light" : "eco-booster-1"
         )}
       >
-        eco mode {isDarkTheme ? "on" : "off"}
+        eco-mode {isDarkTheme ? "on" : "off"}
       </p>
       <Image
         onClick={handleThemeClick}

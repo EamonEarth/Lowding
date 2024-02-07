@@ -8,6 +8,9 @@ import { cn } from "@/lib/utils";
 import { Instagram, Menu, Youtube } from "lucide-react";
 import EcoSwitch from "./EcoSwitch";
 import Logo from "../about/Logo";
+import { useTheme } from "next-themes";
+import MobileNavbar from "./MobileNavbar";
+import { useOutsideClick } from "@/hooks/use-outside-click";
 
 // about resources inspiration contact
 export const NAV_LINKS = [
@@ -31,8 +34,18 @@ export const NAV_LINKS = [
 
 const Navbar = () => {
   const pathname = usePathname();
+  const { resolvedTheme } = useTheme();
+  const isDarkTheme = resolvedTheme === "dark";
+  const [showSidebar, setShowSidebar] = useState(false);
+
   return (
-    <div className="w-full h-[80px] absolute top-0  nav-grey dark:bg-black text-black dark:text-softyellow transition flex items-center px-2 z-50">
+    <div className="w-full h-[80px] absolute top-0  bg-navgrey dark:bg-black text-black dark:text-foreground transition flex items-center px-2 z-50">
+      <div className="absolute right-0 top-0">
+        <MobileNavbar
+          setShowSidebar={setShowSidebar}
+          showSidebar={showSidebar}
+        />
+      </div>
       <div id="logo" className="w-1/3  uppercase font-bold flex ml-4">
         <Logo />
       </div>
@@ -43,8 +56,9 @@ const Navbar = () => {
               <Button
                 variant="nav"
                 className={cn(
-                  "uppercase font-semibold",
-                  pathname === item.href && "underline"
+                  "uppercase  ",
+                  pathname === item.href && "underline",
+                  isDarkTheme ? "text-booster-2-light" : "text-booster-2"
                 )}
               >
                 {item.title}
@@ -52,19 +66,22 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <div className="flex md:hidden">
-          <Menu />
-        </div>
+      </div>
+      <div
+        onClick={() => setShowSidebar(!showSidebar)}
+        className="absolute right-1/2 md:hidden"
+      >
+        <Menu />
       </div>
 
       <div
         id="icons"
-        className="absolute hidden md:flex right-10  items-center gap-x-2 "
+        className="absolute hidden lg:flex right-10  items-center gap-x-2 "
       >
         <Instagram className="w-6 h-6" />
         <Youtube className="w-6 h-6" />
       </div>
-      <div className="absolute top-28 right-6">
+      <div className="absolute md:top-28 right-0 md:right-6">
         <EcoSwitch />
       </div>
     </div>

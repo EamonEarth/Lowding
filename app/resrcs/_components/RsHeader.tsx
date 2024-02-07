@@ -1,25 +1,27 @@
-import React from "react";
-import { bungeeHairline } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
+import Image from "next/image";
 
-const RsHeader = () => {
-  const { resolvedTheme } = useTheme();
-
+interface RsHeaderProps {
+  darkTheme: boolean;
+}
+const RsHeader = ({ darkTheme }: RsHeaderProps) => {
+  const headerSrc = darkTheme
+    ? "/resource-text-dark.svg"
+    : "/resource-text-light.svg";
   return (
-    <section className="pt-[80px]">
+    <section className="pt-[80px] flex items-center justify-center">
       <div
         className="absolute w-full h-[364px] bg-cover bg-center z-0 opacity-50 "
         style={{ backgroundImage: "url('/resources-header.png')" }}
       ></div>
-      <div className=" absolute w-full h-[364px] bg-background bg-cover bg-center z-0 opacity-0 dark:opacity-70  dark:display"></div>
+      <div className=" absolute w-full h-[364px] bg-foreground dark:bg-black bg-cover bg-center z-0  opacity-70  "></div>
 
-      <div
-        className={cn(
-          "w-full h-[364px] z-50 flex items-center justify-center text-4xl lg:text-6xl uppercase ",
-          bungeeHairline.className
-        )}
-      ></div>
+      <Image
+        src={headerSrc}
+        alt="resources banner"
+        height={50}
+        width={503}
+        className="max-w-[66%] py-4 h-[364px] z-10"
+      />
     </section>
   );
 };
