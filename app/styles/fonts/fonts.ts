@@ -13,7 +13,7 @@ export const consolaBold = localFont({
 })
 
 export const bungeeHairline = localFont({
-    src: "BungeeHairline-Regular.ttf",
+    src: "bungeehairline-regular.ttf",
     weight: "400",
     style: "normal",
 })
