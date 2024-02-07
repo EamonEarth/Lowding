@@ -10,7 +10,6 @@ import EcoSwitch from "./EcoSwitch";
 import Logo from "../about/Logo";
 import { useTheme } from "next-themes";
 import MobileNavbar from "./MobileNavbar";
-import { useOutsideClick } from "@/hooks/use-outside-click";
 
 // about resources inspiration contact
 export const NAV_LINKS = [
