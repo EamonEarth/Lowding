@@ -65,7 +65,7 @@ const Header = ({ setScrollToAbout }: HeaderProps) => {
             Learn More
           </Button>
           <Link href="/resrcs">
-            <Button className="uppercase bg-black border-2 text-white border-foreground font-bold rounded-none hover:bg-black">
+            <Button className="uppercase bg-black border-2 text-white dark:text-white border-foreground font-bold rounded-none hover:bg-black">
               Go to Resources
             </Button>
           </Link>
