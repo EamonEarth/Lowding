@@ -16,7 +16,6 @@ interface HeaderProps {
 const Header = ({ setScrollToAbout }: HeaderProps) => {
   const { resolvedTheme } = useTheme();
   const isDarkTheme = resolvedTheme === "dark";
-  console.log(isDarkTheme);
 
   const headerSrc = isDarkTheme
     ? "/centered-logo-white.png"
@@ -26,7 +25,7 @@ const Header = ({ setScrollToAbout }: HeaderProps) => {
     <section className="pt-[80px]">
       <div
         className="absolute w-full h-[545px] bg-cover bg-center z-0  "
-        style={{ backgroundImage: "url('/Home_Header_Banner.jpg')" }}
+        style={{ backgroundImage: "url('/home_header_banner.jpg')" }}
       ></div>
 
       <div

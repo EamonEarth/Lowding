@@ -11,7 +11,6 @@ const EcoSwitch = () => {
   const [activated, setActivated] = useState(false);
 
   const handleThemeClick = () => {
-    console.log("hi");
     setActivated(!activated);
     if (resolvedTheme === "light") {
       setTheme("dark");
@@ -20,7 +19,6 @@ const EcoSwitch = () => {
     }
   };
 
-  useEffect(() => console.log(resolvedTheme), [resolvedTheme]);
   const isDarkTheme = resolvedTheme === "dark";
   const switchFrameSrc = isDarkTheme
     ? "/switch_frame_light.png"
