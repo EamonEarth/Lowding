@@ -1,6 +1,6 @@
 "use client";
 import React, { use } from "react";
-import { bungeeHairline, consola } from "@/lib/fonts";
+import { bungeeHairline, consola } from "@/app/styles/fonts/fonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useTheme } from "next-themes";

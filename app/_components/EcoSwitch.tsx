@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
-import { consolaBold } from "@/lib/fonts";
+import { consolaBold } from "@/app/styles/fonts/fonts";
 
 const EcoSwitch = () => {
   const { setTheme, resolvedTheme } = useTheme();

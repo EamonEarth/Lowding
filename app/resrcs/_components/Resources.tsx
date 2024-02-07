@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { consola } from "@/lib/fonts";
+import { consola } from "@/app/styles/fonts/fonts";
 import { cn } from "@/lib/utils";
 
 const RESOURCES = [

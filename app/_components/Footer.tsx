@@ -1,4 +1,4 @@
-import { bungeeHairline } from "@/lib/fonts";
+import { bungeeHairline } from "@/app/styles/fonts/fonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";

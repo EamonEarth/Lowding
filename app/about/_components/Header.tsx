@@ -1,13 +1,13 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { consola } from "@/lib/fonts";
+import { consola } from "@/app/styles/fonts/fonts";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { consolaBold } from "@/lib/fonts";
+import { consolaBold } from "@/app/styles/fonts/fonts";
 import Link from "next/link";
-import { bungeeHairline } from "@/lib/fonts";
+import { bungeeHairline } from "@/app/styles/fonts/fonts";
 
 interface HeaderProps {
   setScrollToAbout: (value: boolean) => void;
