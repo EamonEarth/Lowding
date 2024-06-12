@@ -77,8 +77,12 @@ const Navbar = () => {
         id="icons"
         className="absolute hidden lg:flex right-10  items-center gap-x-2 "
       >
-        <Instagram className="w-6 h-6" />
-        <Youtube className="w-6 h-6" />
+        <Link href="https://www.instagram.com">
+          <Instagram className="w-6 h-6" />
+        </Link>
+        <Link href="https://www.youtube.com">
+          <Youtube className="w-6 h-6" />
+        </Link>
       </div>
       <div className="absolute md:top-28 right-0 md:right-6">
         <EcoSwitch />

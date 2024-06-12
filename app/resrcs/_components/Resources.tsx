@@ -36,7 +36,7 @@ const Resources = ({ darkTheme }: ResourcesProps) => {
               {resource}
             </AccordionTrigger>
             <AccordionContent>
-              <div className="flex flex-col md:flex-row gap-y-12 relative justify-around px-12">
+              <div className="flex flex-col md:flex-row gap-y-12 relative justify-around items-center px-12">
                 <div className="flex flex-col">
                   <ul className="list-disc dark:text-foreground ">
                     <li>

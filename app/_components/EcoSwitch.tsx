@@ -3,12 +3,13 @@
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { consolaBold } from "@/app/styles/fonts/fonts";
 
 const EcoSwitch = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const [activated, setActivated] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleThemeClick = () => {
     setActivated(!activated);
@@ -19,6 +20,16 @@ const EcoSwitch = () => {
     }
   };
 
+  useEffect(() => {
+    const onResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", onResize);
+
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const isDarkTheme = resolvedTheme === "dark";
   const switchFrameSrc = isDarkTheme
     ? "/switch_frame_light.png"
@@ -26,15 +37,15 @@ const EcoSwitch = () => {
   const switchBitSrc = !isDarkTheme ? "/off_switch_b.png" : "/on_switch_w.png";
 
   return (
-    <div className="flex items-center tracking-tight  md:max-w-auto">
+    <div className={cn("flex items-center tracking-tight  md:max-w-auto")}>
       <p
         className={cn(
-          "uppercase  text-md md:text-md  font-extrabold pr-2 underline text-black dark:text-foreground tracking-",
+          "uppercase  text-xs md:text-base font-extrabold pr-2 md:underline text-black dark:text-foreground tracking-",
           consolaBold.className,
           isDarkTheme ? "eco-booster-1-light" : "eco-booster-1"
         )}
       >
-        eco-mode {isDarkTheme ? "on" : "off"}
+        eco-mode:{isDarkTheme ? "on" : "off"}
       </p>
       <Image
         onClick={handleThemeClick}
@@ -55,14 +66,6 @@ const EcoSwitch = () => {
           )}
         />
       </div>
-      {/* <span className="relative right-[60px] md:pointer-events-none p-1 w-6 h-6 bg-black transition duration-500 dark:bg-white dark:rotate-180 dark:translate-x-5 rounded-s-lg rounded-r-sm"></span> */}
-      {/* <div
-        className={cn(
-          "w-10 h-6 flex items-center  outline outline-2 dark:outline-white rounded-sm"
-        )}
-        onClick={handleThemeClick}
-      >
-      </div> */}
     </div>
   );
 };

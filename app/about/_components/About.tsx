@@ -35,12 +35,13 @@ const About = () => {
               What is a low impact website?
             </h3>
             <p className="text-[15px]">
-              blach blachacsas csaldnsblach blachacsas csaldns blach blachacsas
-              csaldnsblach blachacsas csaldns blach blachacsas csaldns blach
-              blachacsas csaldnsblach blachacsas csaldns blach blachacsas
-              csaldnsblach blachacnsblach blachac nsblach blachacnsblach blachac
-              nsblach blachacnsblach blachacnsblach blachac nsblach
-              blachacnsblach blachacnsblach blachaca
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
           <div className="flex flex-col justify-center  pb-12 ">
@@ -55,12 +56,13 @@ const About = () => {
               Why is it relevant?
             </h3>
             <p className="text-[15px]">
-              blach blachacsas csaldnsblach blachacsas csaldns blach blachacsas
-              csaldnsblach blachacsas csaldns blach blachacsas csaldns blach
-              blachacsas csaldnsblach blachacsas csaldns blach blachacsas
-              csaldnsblach blachacnsblach blachac nsblach blachacnsblach blachac
-              nsblach blachacnsblach blachacnsblach blachac nsblach
-              blachacnsblach blachacnsblach blachac blachacsas csaldnsa
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
           <div className="flex flex-col justify-center  pb-8 ">
@@ -75,12 +77,13 @@ const About = () => {
               What role do designers and developers play?
             </h3>
             <p className="text-[15px]">
-              blach blachacsasblach blachacsas csaldnsblach blachacsas csaldns
-              blach blachacsas csaldnsblach blachacsas csaldns blach blachacsas
-              csaldns blach blachacsas csaldnsblach blachacsas csaldns blach
-              blachacsas csaldnsblach blachacnsblach blachac nsblach
-              blachacnsblach blachac nsblach blachacnsblach blachacnsblach
-              blachac nsblach blachacnsblach blachacnsblach blachac csaldnsa
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
         </div>

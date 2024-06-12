@@ -84,15 +84,15 @@ body {
     opacity: 100%;
   }
   50% {
-    transform: translateX(250px) translateY(-250px); /* Adjust values as needed */
+    transform: translateX(250px) translateY(-250px);
     opacity: 50%;
   }
   80% {
-    transform: translateX(400px) translateY(-400px); /* Adjust values as needed */
+    transform: translateX(400px) translateY(-400px);
     opacity: 10%;
   }
   100% {
-    transform: translateX(500px) translateY(-500px); /* Adjust values as needed */
+    transform: translateX(500px) translateY(-500px);
     opacity: 0%;
   }
 }

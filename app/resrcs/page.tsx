@@ -1,9 +1,7 @@
 "use client";
-import { useState } from "react";
 import RsHeader from "./_components/RsHeader";
 import Resources from "./_components/Resources";
 import { useTheme } from "next-themes";
-import { cn } from "@/lib/utils";
 
 const Page = () => {
   const { resolvedTheme } = useTheme();
